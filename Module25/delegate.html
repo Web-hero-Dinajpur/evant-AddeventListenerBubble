@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate function</title>
+</head>
+<style>
+    body {
+        border: 1px solid orange;
+    }
+
+    #list-container {
+        border: 1px solid red;
+    }
+
+    #item2 {
+        border: 1px solid yellow;
+    }
+</style>
+
+<body id="parent">
+    <ul id="list-container">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li id="item2">Amet, architecto quia?</li>
+        <li class="item">Quod, aliquid cupiditate!</li>
+        <li class="item">Ipsum, ipsam tempore.</li>
+        <li class="item">Totam, nam obcaecati.</li>
+        <li class="item">Autem, assumenda cum.</li>
+    </ul>
+    <button id="btn-add-item">Add Item</button>
+
+    <script>
+        document.getElementById('item2').addEventListener('click', function (event) {
+            console.log('child')
+            // event.stopPropagation();
+            // event.stopImmediatePropagation();
+        })
+        document.getElementById('list-container').addEventListener('click', function () {
+            console.log('item')
+        })
+        document.getElementById('parent').addEventListener('click', function(){
+            console.log('main parent')
+        })
+    </script>
+</body>
+
+</html>

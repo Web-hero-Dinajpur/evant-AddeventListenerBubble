@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegation bubble</title>
+</head>
+<body>
+    <ul id="container-list">
+       <li class="item">Lorem, ipsum dolor.</li>
+       <li class="item">Voluptate, quasi consectetur.</li>
+       <li class="item">Qui, libero amet?</li>
+       <li class="item">Delectus, doloremque et!</li>
+       <li class="item">Excepturi, vero repellat!</li>
+       <li class="item">Libero, veritatis officia.</li>
+    </ul>
+    <button id="btn-add-list">Add button</button>
+
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     item.addEventListener('click', function(event){
+        //         event.target.parentNode.removeChild(event.target)
+        //     })
+        // }
+
+        document.getElementById('container-list').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+        document.getElementById('btn-add-list').addEventListener('click', function(){
+            const listContainer = document.getElementById('container-list');
+
+            const li = document.createElement('li');
+            li.innerText = 'Brand new item added';
+            li.classList.add('item');
+            listContainer.appendChild(li);
+        })
+    </script>
+</body>
+</html>
